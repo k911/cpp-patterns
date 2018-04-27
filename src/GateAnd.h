@@ -9,6 +9,10 @@ class GateAnd : public AbstractLogic {
 public:
     void add(AbstractLogic *element);
 
+    void accept(Visitor *visitor) override;
+
+    AbstractLogic* first();
+
     bool operation() override;
 };
 

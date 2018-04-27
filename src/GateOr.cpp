@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "GateOr.h"
+#include "Visitor.h"
 
 void GateOr::add(AbstractLogic *element) {
     if (children.size() == 3) {
@@ -19,4 +20,12 @@ bool GateOr::operation() {
         result = result || child->operation();
     }
     return result;
+}
+
+void GateOr::accept(Visitor *visitor) {
+    visitor->visitGateOr(this);
+}
+
+AbstractLogic *GateOr::first() {
+    return children[0];
 }

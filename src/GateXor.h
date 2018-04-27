@@ -9,6 +9,10 @@ class GateXor: public AbstractLogic {
 public:
     explicit GateXor(AbstractLogic *a, AbstractLogic *b): logicA(a), logicB(b) {}
 
+    void accept(Visitor *visitor) override;
+
+    AbstractLogic* first();
+
     bool operation() override;
 };
 

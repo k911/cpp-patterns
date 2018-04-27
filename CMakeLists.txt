@@ -3,4 +3,4 @@ project(baz_lab_1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(baz_lab_1 main.cpp src/LogicInput.cpp src/LogicInput.h src/AbstractLogic.h src/GateXor.cpp src/GateXor.h src/GateAnd.cpp src/GateAnd.h src/GateOr.cpp src/GateOr.h)
+add_executable(baz_lab_1 main.cpp src/LogicInput.cpp src/LogicInput.h src/AbstractLogic.h src/GateXor.cpp src/GateXor.h src/GateAnd.cpp src/GateAnd.h src/GateOr.cpp src/GateOr.h src/Visitor.h src/NegateFirstBooleanVisitor.cpp src/NegateFirstBooleanVisitor.h)

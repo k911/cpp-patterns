@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "GateAnd.h"
+#include "Visitor.h"
 
 void GateAnd::add(AbstractLogic *element) {
     if (children.size() == 3) {
@@ -19,4 +20,12 @@ bool GateAnd::operation() {
         result = result && child->operation();
     }
     return result;
+}
+
+void GateAnd::accept(Visitor *visitor) {
+    visitor->visitGateAnd(this);
+}
+
+AbstractLogic *GateAnd::first() {
+    return children[0];
 }
