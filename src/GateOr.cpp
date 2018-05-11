@@ -2,9 +2,9 @@
 #include "GateOr.h"
 #include "Visitor.h"
 
-void GateOr::add(AbstractLogic *element) {
+void GateOr::add(const std::shared_ptr<AbstractLogic> &element) {
     if (children.size() == 3) {
-        throw std::invalid_argument("GateAnd cannot have more than 3 logic inputs");
+        throw std::invalid_argument("GateOr cannot have more than 3 logic inputs");
     }
 
     children.push_back(element);
@@ -26,6 +26,6 @@ void GateOr::accept(Visitor *visitor) {
     visitor->visitGateOr(this);
 }
 
-AbstractLogic *GateOr::first() {
+std::shared_ptr<AbstractLogic> GateOr::first() {
     return children[0];
 }

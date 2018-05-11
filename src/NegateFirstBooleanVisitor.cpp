@@ -17,3 +17,7 @@ void NegateFirstBooleanVisitor::visitGateOr(GateOr *logicInput) {
 void NegateFirstBooleanVisitor::visitGateXor(GateXor *logicInput) {
     logicInput->first()->accept(this);
 }
+
+void NegateFirstBooleanVisitor::visitGateNot(GateNot *logicInput) {
+    logicInput->first()->accept(this);
+}

@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <memory>
 #include "GateXor.h"
 #include "Visitor.h"
 
@@ -14,6 +15,6 @@ void GateXor::accept(Visitor *visitor) {
     visitor->visitGateXor(this);
 }
 
-AbstractLogic *GateXor::first() {
+std::shared_ptr<AbstractLogic> GateXor::first() {
     return logicA;
 }

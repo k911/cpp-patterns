@@ -1,17 +1,18 @@
 #ifndef BAZ_LAB_1_GATEOR_H
 #define BAZ_LAB_1_GATEOR_H
 
+#include <memory>
 #include <vector>
 #include "AbstractLogic.h"
 
 class GateOr : public AbstractLogic {
-    std::vector<AbstractLogic *> children;
+    std::vector<std::shared_ptr<AbstractLogic>> children{};
 public:
-    void add(AbstractLogic *element);
+    void add(const std::shared_ptr<AbstractLogic> &element);
 
     void accept(Visitor *visitor) override;
 
-    AbstractLogic* first();
+    std::shared_ptr<AbstractLogic> first();
 
     bool operation() override;
 };

@@ -5,6 +5,7 @@
 #include "GateAnd.h"
 #include "GateOr.h"
 #include "GateXor.h"
+#include "GateNot.h"
 
 class Visitor {
 public:
@@ -12,6 +13,7 @@ public:
     virtual void visitGateAnd(GateAnd *logicInput) = 0;
     virtual void visitGateOr(GateOr *logicInput) = 0;
     virtual void visitGateXor(GateXor *logicInput) = 0;
+    virtual void visitGateNot(GateNot *logicInput) = 0;
 
     virtual ~Visitor() = default;
 };

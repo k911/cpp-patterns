@@ -13,6 +13,8 @@ public:
     void visitGateOr(GateOr *logicInput) override;
 
     void visitGateXor(GateXor *logicInput) override;
+
+    void visitGateNot(GateNot *logicInput) override;
 };
 
 
